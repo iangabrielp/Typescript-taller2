@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
-import { ImageBackground, StatusBar, Text, TouchableOpacity, View } from 'react-native'
+import { Alert, ImageBackground, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 import { InputComponents } from '../components/InputComponents';
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import { ButtonComponent } from '../components/ButtonComponents';
 import { styles } from '../theme/app.theme';
+import { User } from '../navigator/StackNavigator';
+
+// interface - Props
+interface Props{
+  users:User[];// arreglo con las lista de usuarios
+  handleAddUser:(user:User) => void;// funcion para añadir nuevos elementos al arreglo
+
+}
 
 
 //Interface - formulario Registro
@@ -14,7 +22,7 @@ interface FormRegister {
   password: string;
 }
 
-export const Pantalla3Screens = () => {
+export const Pantalla3Screens = ({users, handleAddUser}: Props) => {
   // hook useState 
 
   const [formRegister, setformRegister] = useState<FormRegister>({
@@ -37,7 +45,53 @@ export const Pantalla3Screens = () => {
   }
   //funcion que permita registrar usuario
   const handleSignUp = () => {
-    console.log(formRegister);
+    // validar que los campos se encuentren llenos
+    if(!formRegister.email || !formRegister.password){
+      // Mensaje de aviso
+      Alert.alert(
+        "Error",
+        "Por favor, completar todos los campos"
+      );
+      return;
+    }
+
+    //validar que no se registre un usuario ya existente
+    if (verifyUser() != null){
+      Alert.alert(
+        "Error",
+        "El correo ya esta registrado"
+      );
+      return;
+
+    }
+
+    //Generar la informacion del nuevo usuario 
+    const getIdUsers =  users.map(user => user.id); // [1,2]
+    // generando el id del nuevo usuario
+    const getNewId = Math.max(... getIdUsers) +1;
+    // crear el nuevo usuario - nuevo objeto de tipo User
+    const newUser:User={
+      id:getNewId,
+      email:formRegister.email,
+      password: formRegister.password
+    }
+
+    // guardar el nuevo arreglo
+    handleAddUser (newUser);
+    Alert.alert(
+      "Felicitaciones",
+      "Registro exitoso"
+    );
+    navigation.goBack();
+
+    //console.log(formRegister);
+  }
+
+  //funcion para verificar que el usuario esta en la lista de usuarios-arreglo
+  const verifyUser= ():User => {
+    const existUser = users.filter(user => user.email === formRegister.email)[0];
+    return existUser; //User- null
+
   }
 
   return (

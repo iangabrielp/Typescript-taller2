@@ -6,6 +6,12 @@ import { CommonActions, useNavigation } from '@react-navigation/native'
 import { ButtonComponent } from '../components/ButtonComponents';
 import { BodyComponents } from '../components/BodyComponents';
 import { styles } from '../theme/app.theme';
+import { User } from '../navigator/StackNavigator';
+
+//interface-props
+interface Props {
+  users:User[]; // arreglo con la lista de usuarios
+}
 
 //Interface-objeto
 interface FormLogin {
@@ -13,19 +19,10 @@ interface FormLogin {
   password: string;
 }
 
-// interface_ vector objetos
-interface User {
-  id: number;
-  email: string;
-  password: string;
-}
 
-export const Pantalla2Screens = () => {
-  // arreglo de usuarios: permitir inicio de sesion
-  const users: User[] = [
-    { id: 1, email: 'gabrie.l@hotmail.es', password: '12345' },
-    { id: 1, email: 'dennis.l@hotmail.es', password: '1234578' }
-  ];
+
+export const Pantalla2Screens = ({users}: Props) => {
+  
 
   //hook useState: maniúlar el estado del formulario 
   const [formLogin, setFormLogin] = useState<FormLogin>({
@@ -61,7 +58,10 @@ export const Pantalla2Screens = () => {
       );
       return;
     }
-    console.log(formLogin);
+
+    // si uso un usuario registrado navego al HomeScreens
+    navigation.dispatch(CommonActions.navigate({name:'Home'}))
+    //console.log(formLogin);
   }
 
   //funcion verificar si existe el correo y contraseña
