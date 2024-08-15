@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Alert, ImageBackground, StatusBar, Text, View } from 'react-native'
+import { Alert, ImageBackground, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 import { InputComponents } from '../components/InputComponents';
-import { TouchableOpacity } from 'react-native-gesture-handler'
+
 import { CommonActions, useNavigation } from '@react-navigation/native'
 import { ButtonComponent } from '../components/ButtonComponents';
 import { BodyComponents } from '../components/BodyComponents';
@@ -74,7 +74,7 @@ export const Pantalla2Screens = ({users}: Props) => {
 
 
     <ImageBackground
-      source={{ uri: 'https://media.istockphoto.com/id/1560833158/es/foto/controlador-de-juego-con-teclado-iluminado-de-color-p%C3%BArpura-en-medio-de-varios-dispositivos.webp?b=1&s=170667a&w=0&k=20&c=yGnmCyFisSDXTqkNOb5uCi96NsG3TjuC8fg6UfWlmXc='}}
+      source={{ uri: 'https://wallpapers.com/images/hd/dope-fortnite-ffm9p3g8x37c8c7t.jpg'}}
       style={styles.fondoIni}>
       <View >
         <StatusBar translucent={true} />
@@ -86,7 +86,7 @@ export const Pantalla2Screens = ({users}: Props) => {
           <InputComponents input='Contraseña' handleSetValues={handleSetValues} name='password'
             isPassword={hiddenPassword} hasIcon={true} actionIcon={() => setHiddenPassword(!hiddenPassword)} />
         </View>
-        <ButtonComponent textButton='Iniciar' actionButton={handleSigIn} />
+        <ButtonComponent textButton='Entrar' actionButton={handleSigIn} />
         <TouchableOpacity
           onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Register' }))}>
           <Text style={styles.textRedirection}>

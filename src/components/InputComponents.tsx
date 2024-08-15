@@ -1,7 +1,7 @@
 import { TextInput, StyleSheet, View } from "react-native";
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { INI_COLOR, PRIMARY_COLOR } from "../commons/Constants.color";
+import { INI_COLOR,  } from "../commons/Constants.color";
 import { styles } from "../theme/app.theme";
 
 

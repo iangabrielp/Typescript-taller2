@@ -1,7 +1,6 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react'
 import { Button, Text, View, Image, StyleSheet, ImageBackground, StatusBar } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ButtonComponent } from '../components/ButtonComponents';
 import { styles } from '../theme/app.theme';
 

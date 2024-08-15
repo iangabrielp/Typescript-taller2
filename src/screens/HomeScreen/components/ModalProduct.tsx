@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Text, useWindowDimensions, View, StyleSheet, Image } from 'react-native';
+import { Text, useWindowDimensions, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Modal } from 'react-native'
 import { styles } from '../../../theme/app.theme';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+
 import { Product } from '../HomeScreens';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { INI_COLOR, PRIMARY_COLOR } from '../../../commons/Constants.color';
+import { ImageBackground } from 'react-native';
 
 // interface-Props
 interface Props {
@@ -37,11 +38,15 @@ export const ModalProduct = ({ isVisible, setShowModal, product, changeStockProd
   }
 
   return (
+    
     <Modal visible={isVisible} transparent={true} animationType='fade'>
+      <ImageBackground
+      source={{ uri: 'https://wallpapers.com/images/high/shadow-midas-fortnite-purple-art-uj77rr66xfp33m2j.webp' }}
+      style={styles.fondoIni}>
       <View style={styles.contentPrincipal}>
         <View style={{
           ...styles.contentModal,
-          width: width * 0.90
+          width: width * 0.85
         }}>
           <View style={styles.headerModal}>
             <Text style={styles.titleModal}>{product.name} - ${product.price.toFixed(2)}</Text>
@@ -94,6 +99,8 @@ export const ModalProduct = ({ isVisible, setShowModal, product, changeStockProd
           }
         </View>
       </View>
+      </ImageBackground>
     </Modal>
+    
   )
 }

@@ -3,7 +3,7 @@ import { Image, Text, View } from 'react-native'
 import { Product } from '../HomeScreens'
 import { styles } from '../../../theme/app.theme'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { GAME_COLOR, INI_COLOR } from '../../../commons/Constants.color'
+import {  INI_COLOR } from '../../../commons/Constants.color'
 import { ModalProduct } from './ModalProduct'
 
 //interface - Props
@@ -15,6 +15,7 @@ interface Props {
 export const CardProducts = ({ product, changeStockProduct }: Props) => {
     //hook useState: se hace visible o no
      const [showModal, setShowModal] = useState <boolean>(false);
+     
     return (
         <View>
         <View style={styles.contentCard}>

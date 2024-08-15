@@ -27,14 +27,18 @@ export const styles = StyleSheet.create({
     fontSize: 16,
   },
   inputText: {
-    backgroundColor: GAME_COLOR,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 10
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    marginBottom: 20,
+    paddingHorizontal: 10,
+    fontSize: 16,
+    color: '#fff', 
   },
   contentInput: {
     marginTop: 30,
-    gap: 10
+    gap: 1,
+    color: GAME_COLOR, 
   },
   button: {
     backgroundColor: INI_COLOR,
@@ -59,7 +63,7 @@ export const styles = StyleSheet.create({
   textRedirection: {
     marginTop: 30,
     fontSize: 16,
-    color: INI_COLOR,
+    color: SECUNDARY_COLOR,
     fontWeight: 'bold',
     textAlign: 'center',
     
@@ -114,10 +118,10 @@ export const styles = StyleSheet.create({
 
   },
   contentModal:{
-    backgroundColor: GAME_COLOR,
-    padding:25,
+  
+    padding:30,
     borderRadius:10,
-    shadowColor:'#000',
+    shadowColor:GAME_COLOR,
     shadowOffset:{
       width:0,
       height:2
@@ -126,21 +130,24 @@ export const styles = StyleSheet.create({
     shadowRadius:4,
     elevation:5
   },
+
   headerModal:{
     flexDirection:'row',
-    borderBottomColor:'#ccc',
+    borderBottomColor: INI_COLOR,
+    margin:5,
     borderBottomWidth:2,
-    padding:10,
+    padding:15,
     alignItems:'center',
   },
   titleModal:{
-    fontSize:20,
+    fontSize:30,
     fontWeight:'bold',
+    color:SECUNDARY_COLOR
   },
   imageModal:{
     margin:5,
-    width:345,
-    height:210,
+    width:300,
+    height:200,
   },
   contentQuantity:{
     flexDirection:'row',
@@ -163,11 +170,11 @@ export const styles = StyleSheet.create({
   },
   textQuantity:{
     fontSize:20,
-    color:'#000',
+    color:SECUNDARY_COLOR,
     textAlign:'center',
   },
   buttonAddCard:{
-    backgroundColor:PRIMARY_COLOR,
+    backgroundColor:INI_COLOR,
     alignItems:'center',
     marginTop:15,
     paddingVertical:10,
@@ -180,9 +187,42 @@ export const styles = StyleSheet.create({
  messageStock:{
   fontSize:28,
   fontWeight:'bold',
-  color: '#b52828',
+  color: GAME_COLOR,
   textAlign:'center',
  },
+ contentHeaderHome:{
+ flexDirection:'row',
+ alignItems:'center',
+ },
+ textIconCar:{
+  backgroundColor:SECUNDARY_COLOR,
+  borderRadius:100,
+  paddingHorizontal:5,
+  fontSize:14,
+  fontWeight:'bold',
+ },
+ headerTable:{
+  flexDirection:'row',
+  justifyContent:'space-between',
+ },
+ headerTableInf:{
+  
+  flexDirection:'row',
+  
+ },
+ textHeaderInf:{
+  
+  fontWeight:'bold',
+  color:SECUNDARY_COLOR,
+ },
+ textTotalPay:{
+marginTop:15,
+fontSize:15,
+fontWeight:'bold',
+marginHorizontal:10,
+color:SECUNDARY_COLOR,
+ },
+
   
   // themes inicio
   fondoIni: {
@@ -213,8 +253,9 @@ export const styles = StyleSheet.create({
   titulopant2: {
     fontSize: 36,
     color: '#fff',
-    marginBottom: 20,
+    marginBottom: 10,
     textAlign: 'center',
+    marginHorizontal:40
   },
   
 });

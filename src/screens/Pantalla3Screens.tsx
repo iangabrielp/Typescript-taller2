@@ -96,7 +96,7 @@ export const Pantalla3Screens = ({users, handleAddUser}: Props) => {
 
   return (
     <ImageBackground
-      source={{ uri: 'https://media.istockphoto.com/id/1858114279/es/foto/entretenimiento-de-juegos-controlador-de-consola-actividad-de-videojuegos.webp?b=1&s=170667a&w=0&k=20&c=jSKyCs1cKu95BeIqh7RpkQBS5XZWq3FOESHKi56aVKo='}}
+      source={{ uri: 'https://wallpapers.com/images/high/gaming-profile-pictures-ocli0t6z9fjhvoyk.webp'}}
       style={styles.fondoIni}>
       <View>
         <StatusBar translucent={true} />
