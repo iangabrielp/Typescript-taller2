@@ -58,7 +58,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     right: 20,
     zIndex: 1,
-    marginTop: 13
+    marginTop: 10
   },
   textRedirection: {
     marginTop: 30,

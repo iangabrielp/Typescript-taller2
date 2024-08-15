@@ -1,7 +1,7 @@
 import { TextInput, StyleSheet, View } from "react-native";
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { INI_COLOR,  } from "../commons/Constants.color";
+import { GAME_COLOR, INI_COLOR,  } from "../commons/Constants.color";
 import { styles } from "../theme/app.theme";
 
 
@@ -23,7 +23,7 @@ export const InputComponents = ({ input, handleSetValues, name, isPassword = fal
         (hasIcon)
         ? <Icon name = 'visibility' size={25} 
         onPress={actionIcon}
-        color={INI_COLOR}
+        color={GAME_COLOR}
         style={styles.iconPassword}/>
         :null
       }

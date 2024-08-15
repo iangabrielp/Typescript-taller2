@@ -5,6 +5,7 @@ import { CommonActions, useNavigation } from '@react-navigation/native';
 import { ButtonComponent } from '../components/ButtonComponents';
 import { styles } from '../theme/app.theme';
 import { User } from '../navigator/StackNavigator';
+import { SECUNDARY_COLOR } from '../commons/Constants.color';
 
 // interface - Props
 interface Props{
