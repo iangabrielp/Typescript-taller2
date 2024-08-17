@@ -19,6 +19,7 @@ interface Props {
 export const ModalProduct = ({ isVisible, setShowModal, product, changeStockProduct }: Props) => {
   // hook useWindowsDimension: tamaño de la pantalla
   const { width } = useWindowDimensions();
+  
   // hook useState :manipular el estado de la cantidad
   const [quantity, setQuantity] = useState<number>(1);
 
@@ -29,8 +30,10 @@ export const ModalProduct = ({ isVisible, setShowModal, product, changeStockProd
 
   // funcion agregar productos al carrito
   const handleAddProduct = () => {
+
     // actualizar stock
     changeStockProduct(product.id, quantity);
+    
     // reinicar quantity
     setQuantity(1);
     // cerra modal
@@ -41,7 +44,7 @@ export const ModalProduct = ({ isVisible, setShowModal, product, changeStockProd
     
     <Modal visible={isVisible} transparent={true} animationType='fade'>
       <ImageBackground
-      source={{ uri: 'https://wallpapers.com/images/high/shadow-midas-fortnite-purple-art-uj77rr66xfp33m2j.webp' }}
+      source={{ uri: 'https://wallpapers.com/images/high/shadow-midas-fortnite-purple-art-uj77rr66xfp33m2j.webp'}}
       style={styles.fondoIni}>
       <View style={styles.contentPrincipal}>
         <View style={{

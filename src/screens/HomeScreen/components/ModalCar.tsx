@@ -44,7 +44,7 @@ export const ModalCar = ({ isVisible, setShowModal, car }: Props) => {
           width: width * 0.80
         }}>
           <View style={styles.headerModal}>
-            <Text style={styles.titleModal}>D´Games</Text>
+            <Text style={styles.titleModal}>D'Games</Text>
             <View style={styles.iconCard}>
               <Icon
                 name='cancel'

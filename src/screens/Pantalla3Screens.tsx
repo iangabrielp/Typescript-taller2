@@ -14,7 +14,6 @@ interface Props{
 
 }
 
-
 //Interface - formulario Registro
 interface FormRegister {
   nombre: string;

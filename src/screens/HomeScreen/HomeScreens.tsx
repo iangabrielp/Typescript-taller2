@@ -47,7 +47,7 @@ export const HomeScreens = () => {
   // hook useState : manipular el aarreglo del carrito de compras
   const [car, setCar] = useState<Car[]>([]);
   // hook useState: manipular la visibilidad del modal
-  const [showModal, setShowModal] = useState <boolean>(false)
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   // funcion para actualizar la informacion de la lista producto
   const changeStockProduct = (idProduct: number, quantity: number) => {
@@ -62,7 +62,6 @@ export const HomeScreens = () => {
     addProduct(idProduct, quantity);
 
   }
-
   // funcion agregar los productos al carrito
   const addProduct = (idProduct: number, quantity: number) => {
     const product = productsState.find(product => product.id === idProduct);
@@ -103,8 +102,8 @@ export const HomeScreens = () => {
             <Icon
               name='shopping-cart'
               size={33}
-              color={SECUNDARY_COLOR} 
-              onPress={() => setShowModal(!showModal)}/>
+              color={SECUNDARY_COLOR}
+              onPress={() => setShowModal(!showModal)} />
           </View>
         </View>
         <BodyComponents>
@@ -114,10 +113,10 @@ export const HomeScreens = () => {
               changeStockProduct={changeStockProduct} />}
             keyExtractor={item => item.id.toString()} />
         </BodyComponents>
-        <ModalCar 
-        isVisible={showModal} 
-        car={car} 
-        setShowModal={() => setShowModal(!showModal)}/>
+        <ModalCar
+          isVisible={showModal}
+          car={car}
+          setShowModal={() => setShowModal(!showModal)} />
       </View>
     </ImageBackground>
   )
